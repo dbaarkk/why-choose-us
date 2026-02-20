@@ -68,14 +68,14 @@ export default function HeroSection() {
         </a>
       </nav>
 
-      {/* ===== HERO VISUAL: Phone + Hands ===== */}
+      {/* ===== HERO VISUAL: Text + Hands ===== */}
       <div
         className="relative w-full flex items-center justify-center"
         style={{ height: "480px", marginTop: "12px" }}>
 
           {/* LEFT HAND — slides left on scroll */}
           <div
-          className="absolute inset-y-0 left-0 w-[46%] pointer-events-none select-none flex items-center justify-end pr-10 md:pr-16"
+          className="absolute inset-y-0 left-0 w-[46%] pointer-events-none select-none flex items-center justify-end pr-24 md:pr-32"
           style={{
             transform: `translateX(-${handOffset}%)`,
             opacity: handOpacity,
@@ -97,7 +97,7 @@ export default function HeroSection() {
 
           {/* RIGHT HAND — slides right on scroll */}
           <div
-          className="absolute inset-y-0 right-0 w-[46%] pointer-events-none select-none flex items-center justify-start pl-10 md:pl-16"
+          className="absolute inset-y-0 right-0 w-[46%] pointer-events-none select-none flex items-center justify-start pl-24 md:pl-32"
           style={{
             transform: `translateX(${handOffset}%)`,
             opacity: handOpacity,
@@ -117,9 +117,14 @@ export default function HeroSection() {
 
           </div>
 
-        {/* Center phone mockup — always stays */}
-        <div className="relative z-20 flex flex-col items-center drop-shadow-2xl">
-          <PhoneMockup />
+        {/* Center text replaces phone mockup */}
+        <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 drop-shadow-[0_0_20px_rgba(200,255,0,0.15)]">
+          <h2 className="font-[family-name:var(--font-space-grotesk)] text-white text-5xl md:text-7xl font-bold leading-tight tracking-tight uppercase">
+            Why choose
+          </h2>
+          <h2 className="font-[family-name:var(--font-space-grotesk)] text-[#c8ff00] text-5xl md:text-7xl font-bold leading-tight tracking-tight uppercase">
+            Sovereign sites
+          </h2>
         </div>
       </div>
 
@@ -166,156 +171,5 @@ export default function HeroSection() {
         </span>
       </div>
     </section>);
-
-}
-
-function PhoneMockup() {
-  return (
-    <div
-      className="relative transform scale-[0.65] md:scale-[0.70] lg:scale-[0.80] origin-center transition-transform"
-      style={{ width: "210px", height: "440px" }}>
-
-      {/* Glow behind phone */}
-      <div
-        className="absolute inset-0 rounded-[38px] pointer-events-none"
-        style={{
-          background:
-          "radial-gradient(ellipse at 50% 50%, rgba(200,255,0,0.12) 0%, transparent 70%)",
-          transform: "scale(1.3)"
-        }} />
-
-
-      {/* Side buttons */}
-      <div className="absolute -left-[3px] top-[90px] w-[3px] h-[20px] bg-[#222] rounded-l-md shadow-[-1px_0_2px_rgba(255,255,255,0.1)]" /> {/* Action */}
-      <div className="absolute -left-[3px] top-[130px] w-[3px] h-[40px] bg-[#222] rounded-l-md shadow-[-1px_0_2px_rgba(255,255,255,0.1)]" /> {/* Vol Up */}
-      <div className="absolute -left-[3px] top-[180px] w-[3px] h-[40px] bg-[#222] rounded-l-md shadow-[-1px_0_2px_rgba(255,255,255,0.1)]" /> {/* Vol Down */}
-      <div className="absolute -right-[3px] top-[140px] w-[3px] h-[55px] bg-[#222] rounded-r-md shadow-[1px_0_2px_rgba(255,255,255,0.1)]" /> {/* Power */}
-
-      {/* Outer frame / Bezel */}
-      <div className="absolute inset-0 rounded-[40px] bg-black border-[4px] border-[#2a2a2a] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.05)] p-[3px]">
-        
-          {/* Inner Screen */}
-          <div className="relative w-full h-full rounded-[32px] bg-[#0a0a0a] border border-[#1e1e1e] overflow-hidden">
-            
-            {/* Dynamic island / Camera Pill */}
-            <div className="absolute top-[8px] left-1/2 -translate-x-1/2 w-[85px] h-[24px] bg-[#2a2a2a] border border-[#3a3a3a] rounded-full z-30 flex items-center justify-end px-2 shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]">
-              <div className="w-[12px] h-[12px] rounded-full bg-black shadow-[inset_0_0_4px_rgba(255,255,255,0.2)] flex items-center justify-center mr-0.5">
-                 <div className="w-[4px] h-[4px] rounded-full bg-[#111]" />
-              </div>
-            </div>
-
-          {/* Screen bg grid */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
-              backgroundSize: "22px 22px"
-            }} />
-
-
-          {/* Screen content */}
-          <div className="absolute inset-0 flex flex-col pt-10 pb-0">
-            {/* Header */}
-          <div className="flex items-start justify-between px-5 py-3">
-            <div>
-              <p className="font-[family-name:var(--font-inter)] text-[#888] text-[9px] uppercase tracking-[0.2em]">
-                WELCOME BACK
-              </p>
-              <h2 className="font-[family-name:var(--font-space-grotesk)] text-white text-[26px] font-bold leading-tight">
-                Aarya
-              </h2>
-            </div>
-            <div className="w-9 h-9 rounded-full bg-[#c8ff00] flex items-center justify-center mt-1">
-              <span className="text-black font-black text-sm font-[family-name:var(--font-space-grotesk)]">
-                A
-              </span>
-            </div>
-          </div>
-
-          {/* Hero card */}
-          <div className="mx-4 bg-[#111] border border-[#1e1e1e] rounded-2xl p-4 mb-3">
-            <div className="flex items-center gap-1 mb-2.5">
-              <div className="bg-[#182410] border border-[#c8ff00]/25 rounded-full px-2 py-0.5 flex items-center gap-1">
-                <span className="text-[#c8ff00] text-[7px]">✦</span>
-                <span className="text-[#c8ff00] text-[7px] font-bold uppercase tracking-wider">
-                  Premium Web Agency
-                </span>
-              </div>
-            </div>
-            <p className="text-white text-[13px] font-bold leading-snug font-[family-name:var(--font-space-grotesk)]">
-              We build websites{" "}
-              <span className="text-[#c8ff00] italic">that convert</span>
-            </p>
-            <p className="text-[#666] text-[9px] mt-1 leading-relaxed font-[family-name:var(--font-inter)]">
-              Launch your business online in 72 hours. Performance-driven,
-              custom engineered.
-            </p>
-            <button className="mt-3 w-full bg-[#c8ff00] text-black text-[10px] font-black rounded-full py-2 flex items-center justify-center gap-1 font-[family-name:var(--font-space-grotesk)]">
-              🚀 Start Your Project →
-            </button>
-          </div>
-
-          {/* Services label */}
-          <div className="flex items-center justify-between px-5 mb-2">
-            <p className="text-white text-[11px] font-bold font-[family-name:var(--font-space-grotesk)]">
-              Our Services
-            </p>
-            <p className="text-[#555] text-[9px] font-[family-name:var(--font-inter)]">
-              12 types
-            </p>
-          </div>
-
-          {/* Mini service grid */}
-          <div className="grid grid-cols-3 gap-1.5 px-4 flex-1">
-            {[
-              { icon: "🌐", label: "Business Sites" },
-              { icon: "🚀", label: "Landing Pages" },
-              { icon: "🛒", label: "E-commerce" },
-              { icon: "</>", label: "Web Apps" },
-              { icon: "📱", label: "Mobile PWA" },
-              { icon: "📊", label: "Dashboards" }].
-              map((s) =>
-              <div
-                key={s.label}
-                className="bg-[#111] border border-[#1a1a1a] rounded-xl p-2 flex flex-col items-center gap-1">
-
-                <div className="w-5 h-5 rounded-lg bg-[#182410] flex items-center justify-center">
-                  <span className="text-[#c8ff00] text-[9px]">
-                    {s.icon}
-                  </span>
-                </div>
-                <span className="text-[#666] text-[7px] text-center leading-tight font-[family-name:var(--font-inter)]">
-                  {s.label}
-                </span>
-              </div>
-              )}
-          </div>
-
-          {/* Bottom nav */}
-          <div className="border-t border-[#1a1a1a] flex items-center justify-around py-2.5 px-3 mt-2">
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="text-[#c8ff00] text-[10px]">🚀</span>
-              <span className="text-[#c8ff00] text-[6px] font-bold tracking-wide">
-                LAUNCH
-              </span>
-            </div>
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="text-[#555] text-[10px]">📁</span>
-              <span className="text-[#555] text-[6px] tracking-wide">
-                PROJECTS
-              </span>
-            </div>
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="text-[#555] text-[10px]">👤</span>
-              <span className="text-[#555] text-[6px] tracking-wide">
-                PROFILE
-              </span>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-      </div>);
 
 }
