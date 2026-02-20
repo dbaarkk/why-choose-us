@@ -75,7 +75,7 @@ export default function HeroSection() {
 
           {/* LEFT HAND — slides left on scroll */}
           <div
-          className="absolute inset-y-0 left-0 w-[46%] pointer-events-none select-none flex items-center justify-end pr-16 md:pr-24"
+          className="absolute inset-y-0 left-0 w-[48%] pointer-events-none select-none flex items-center justify-end pr-32 md:pr-40"
           style={{
             transform: `translateX(-${handOffset}%)`,
             opacity: handOpacity,
@@ -97,7 +97,7 @@ export default function HeroSection() {
 
           {/* RIGHT HAND — slides right on scroll */}
           <div
-          className="absolute inset-y-0 right-0 w-[46%] pointer-events-none select-none flex items-center justify-start pl-10 md:pl-16"
+          className="absolute inset-y-0 right-0 w-[48%] pointer-events-none select-none flex items-center justify-start pl-32 md:pl-40"
           style={{
             transform: `translateX(${handOffset}%)`,
             opacity: handOpacity,

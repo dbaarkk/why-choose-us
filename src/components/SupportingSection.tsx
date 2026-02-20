@@ -1,34 +1,19 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import {
-  Globe,
-  Rocket,
-  ShoppingCart,
-  Code,
-  Smartphone,
-  LayoutDashboard,
-  Palette,
-  ShieldCheck,
-  Zap,
-  PenTool,
-  Layers,
-  Link as LinkIcon
-} from "lucide-react";
-
 const services = [
-  { icon: <Globe size={18} className="text-[#c8ff00]" />, label: "Business Sites" },
-  { icon: <Rocket size={18} className="text-[#c8ff00]" />, label: "Landing Pages" },
-  { icon: <ShoppingCart size={18} className="text-[#c8ff00]" />, label: "E-commerce" },
-  { icon: <Code size={18} className="text-[#c8ff00]" />, label: "Web Apps" },
-  { icon: <Smartphone size={18} className="text-[#c8ff00]" />, label: "Mobile PWA" },
-  { icon: <LayoutDashboard size={18} className="text-[#c8ff00]" />, label: "Dashboards" },
-  { icon: <Palette size={18} className="text-[#c8ff00]" />, label: "Portfolio" },
-  { icon: <ShieldCheck size={18} className="text-[#c8ff00]" />, label: "SaaS" },
-  { icon: <Zap size={18} className="text-[#c8ff00]" />, label: "Automation" },
-  { icon: <PenTool size={18} className="text-[#c8ff00]" />, label: "CMS Sites" },
-  { icon: <Layers size={18} className="text-[#c8ff00]" />, label: "Custom Apps" },
-  { icon: <LinkIcon size={18} className="text-[#c8ff00]" />, label: "API Integration" },
+  { label: "Business Sites" },
+  { label: "Landing Pages" },
+  { label: "E-commerce" },
+  { label: "Web Apps" },
+  { label: "Mobile PWA" },
+  { label: "Dashboards" },
+  { label: "Portfolio" },
+  { label: "SaaS" },
+  { label: "Automation" },
+  { label: "CMS Sites" },
+  { label: "Custom Apps" },
+  { label: "API Integration" },
 ];
 
 const testimonials = [
@@ -128,21 +113,21 @@ export default function SupportingSection() {
 
           <div
             data-key="services-grid"
-            className={`grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 transition-all duration-700 delay-200 ${
+            className={`grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 transition-all duration-700 delay-200 ${
               isVisible("services-grid")
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
           >
-            {services.map((service) => (
+            {services.map((service, i) => (
               <div
                 key={service.label}
-                className="group bg-[#0d0d0d] border border-[#1a1a1a] rounded-2xl p-4 flex flex-col items-center gap-2 hover:border-[#c8ff00]/30 hover:bg-[#111] transition-all duration-300 cursor-default"
+                className="group bg-[#0d0d0d] border border-[#1a1a1a] rounded-2xl p-6 transition-all duration-300 cursor-default hover:border-[#c8ff00]/20"
               >
-                <div className="w-10 h-10 bg-[#1a2a0a] border border-[#c8ff00]/20 rounded-xl flex items-center justify-center group-hover:border-[#c8ff00]/50 transition-colors">
-                  {service.icon}
-                </div>
-                <span className="text-[#888] text-xs text-center font-[family-name:var(--font-inter)] group-hover:text-white transition-colors leading-tight">
+                <span className="font-[family-name:var(--font-space-grotesk)] text-4xl font-black text-[#1a1a1a] block mb-2">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="text-white text-sm font-bold font-[family-name:var(--font-space-grotesk)] transition-colors group-hover:text-[#c8ff00]">
                   {service.label}
                 </span>
               </div>
