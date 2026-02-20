@@ -75,7 +75,7 @@ export default function HeroSection() {
 
           {/* LEFT HAND — slides left on scroll */}
           <div
-          className="absolute inset-y-0 left-0 w-[48%] pointer-events-none select-none flex items-center justify-end pr-32 md:pr-40"
+          className="absolute inset-y-0 left-0 w-1/2 pointer-events-none select-none flex items-center justify-end pr-20 md:pr-28"
           style={{
             transform: `translateX(-${handOffset}%)`,
             opacity: handOpacity,
@@ -84,7 +84,7 @@ export default function HeroSection() {
           }}>
 
             <div
-            className="w-full h-full max-w-[400px]"
+            className="w-full h-full max-w-[500px]"
             style={{
               backgroundImage: `url('https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/ea4c5bf3-e4d3-4927-b10a-3399b21a079d/Screenshot_2026-02-20-12-58-23-64_99c04817c0de5652397fc8b56c3b3817-1771574357893.png?width=8000&height=8000&resize=contain')`,
               backgroundSize: "contain",
@@ -97,7 +97,7 @@ export default function HeroSection() {
 
           {/* RIGHT HAND — slides right on scroll */}
           <div
-          className="absolute inset-y-0 right-0 w-[48%] pointer-events-none select-none flex items-center justify-start pl-32 md:pl-40"
+          className="absolute inset-y-0 right-0 w-1/2 pointer-events-none select-none flex items-center justify-start pl-20 md:pl-28"
           style={{
             transform: `translateX(${handOffset}%)`,
             opacity: handOpacity,
@@ -106,7 +106,7 @@ export default function HeroSection() {
           }}>
 
             <div
-            className="w-full h-full max-w-[400px]"
+            className="w-full h-full max-w-[500px]"
             style={{
               backgroundImage: `url('https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/ea4c5bf3-e4d3-4927-b10a-3399b21a079d/Screenshot_2026-02-20-12-58-54-03_99c04817c0de5652397fc8b56c3b3817-1771574347598.png?width=8000&height=8000&resize=contain')`,
               backgroundSize: "contain",
@@ -172,7 +172,7 @@ export default function HeroSection() {
 function PhoneMockup() {
   return (
     <div
-      className="relative transform scale-[0.55] md:scale-[0.60] lg:scale-[0.70] origin-center transition-transform"
+      className="relative transform scale-[0.60] md:scale-[0.65] lg:scale-[0.75] origin-center transition-transform"
       style={{ width: "210px", height: "440px" }}>
 
       {/* Glow behind phone */}
