@@ -1,20 +1,34 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import {
+  Globe,
+  Rocket,
+  ShoppingCart,
+  Code,
+  Smartphone,
+  LayoutDashboard,
+  Palette,
+  ShieldCheck,
+  Zap,
+  PenTool,
+  Layers,
+  Link as LinkIcon
+} from "lucide-react";
 
 const services = [
-  { icon: "🌐", label: "Business Sites" },
-  { icon: "🚀", label: "Landing Pages" },
-  { icon: "🛒", label: "E-commerce" },
-  { icon: "</>", label: "Web Apps" },
-  { icon: "📱", label: "Mobile PWA" },
-  { icon: "📊", label: "Dashboards" },
-  { icon: "🎨", label: "Portfolio" },
-  { icon: "🛡", label: "SaaS" },
-  { icon: "⚡", label: "Automation" },
-  { icon: "🖊", label: "CMS Sites" },
-  { icon: "📦", label: "Custom Apps" },
-  { icon: "🔗", label: "API Integration" },
+  { icon: <Globe size={18} className="text-[#c8ff00]" />, label: "Business Sites" },
+  { icon: <Rocket size={18} className="text-[#c8ff00]" />, label: "Landing Pages" },
+  { icon: <ShoppingCart size={18} className="text-[#c8ff00]" />, label: "E-commerce" },
+  { icon: <Code size={18} className="text-[#c8ff00]" />, label: "Web Apps" },
+  { icon: <Smartphone size={18} className="text-[#c8ff00]" />, label: "Mobile PWA" },
+  { icon: <LayoutDashboard size={18} className="text-[#c8ff00]" />, label: "Dashboards" },
+  { icon: <Palette size={18} className="text-[#c8ff00]" />, label: "Portfolio" },
+  { icon: <ShieldCheck size={18} className="text-[#c8ff00]" />, label: "SaaS" },
+  { icon: <Zap size={18} className="text-[#c8ff00]" />, label: "Automation" },
+  { icon: <PenTool size={18} className="text-[#c8ff00]" />, label: "CMS Sites" },
+  { icon: <Layers size={18} className="text-[#c8ff00]" />, label: "Custom Apps" },
+  { icon: <LinkIcon size={18} className="text-[#c8ff00]" />, label: "API Integration" },
 ];
 
 const testimonials = [
@@ -125,7 +139,7 @@ export default function SupportingSection() {
                 key={service.label}
                 className="group bg-[#0d0d0d] border border-[#1a1a1a] rounded-2xl p-4 flex flex-col items-center gap-2 hover:border-[#c8ff00]/30 hover:bg-[#111] transition-all duration-300 cursor-default"
               >
-                <div className="w-10 h-10 bg-[#1a2a0a] border border-[#c8ff00]/20 rounded-xl flex items-center justify-center text-lg group-hover:border-[#c8ff00]/50 transition-colors">
+                <div className="w-10 h-10 bg-[#1a2a0a] border border-[#c8ff00]/20 rounded-xl flex items-center justify-center group-hover:border-[#c8ff00]/50 transition-colors">
                   {service.icon}
                 </div>
                 <span className="text-[#888] text-xs text-center font-[family-name:var(--font-inter)] group-hover:text-white transition-colors leading-tight">

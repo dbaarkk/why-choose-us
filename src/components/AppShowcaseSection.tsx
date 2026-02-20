@@ -9,7 +9,7 @@ const screens = [
   sublabel: "LOGIN",
   tag: "Step 1",
   color: "#c8ff00",
-  content: <LoginScreen />
+  image: "/images/step1.jpg"
 },
 {
   id: 2,
@@ -17,7 +17,7 @@ const screens = [
   sublabel: "WEBSITE DESCRIPTION",
   tag: "Step 2",
   color: "#c8ff00",
-  content: <WebsiteTypeScreen />
+  image: "/images/step2.jpg"
 },
 {
   id: 3,
@@ -25,7 +25,7 @@ const screens = [
   sublabel: "Design Brief",
   tag: "Step 3",
   color: "#c8ff00",
-  content: <DetailsScreen />
+  image: "/images/step3.jpg"
 },
 {
   id: 4,
@@ -33,7 +33,7 @@ const screens = [
   sublabel: "Instant Pricing",
   tag: "Step 4",
   color: "#c8ff00",
-  content: <EstimateScreen />
+  image: "/images/step4.jpg"
 }];
 
 
@@ -130,7 +130,13 @@ export default function AppShowcaseSection() {
 
                 {/* Phone mockup */}
                 <div className="flex justify-center pt-6 pb-2 px-6">
-                  <PhoneFrame>{screen.content}</PhoneFrame>
+                  <PhoneFrame>
+                    <img
+                        src={screen.image}
+                        alt={screen.label}
+                        className="w-full h-full object-cover"
+                    />
+                  </PhoneFrame>
                 </div>
 
                 {/* Label */}
@@ -183,288 +189,9 @@ function PhoneFrame({ children }: {children: React.ReactNode;}) {
           backgroundSize: "20px 20px"
         }} />
 
-      <div className="relative h-full pt-10 overflow-y-auto scrollbar-none">
+      <div className="relative h-full pt-10 overflow-hidden">
         {children}
       </div>
-    </div>);
-
-}
-
-function LoginScreen() {
-  return (
-    <div className="flex flex-col px-5 pt-4">
-      <p className="font-[family-name:var(--font-space-grotesk)] text-white text-xl font-bold leading-tight mb-1">
-        Welcome back
-      </p>
-      <p className="text-[#666] text-[10px] font-[family-name:var(--font-inter)] mb-5">
-        Sign in to your Sovereign launchpad
-      </p>
-
-      {/* Inputs */}
-      <div className="space-y-2.5">
-        <div className="bg-[#141414] border border-[#222] rounded-xl px-3 py-2.5 flex items-center gap-2">
-          <span className="text-[#555] text-xs">✉</span>
-          <span className="text-[#555] text-[10px] font-[family-name:var(--font-inter)]">
-            Email or Phone
-          </span>
-        </div>
-        <div className="bg-[#141414] border border-[#222] rounded-xl px-3 py-2.5 flex items-center gap-2 justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-[#555] text-xs">🔒</span>
-            <span className="text-[#555] text-[10px] font-[family-name:var(--font-inter)]">
-              Password
-            </span>
-          </div>
-          <span className="text-[#555] text-xs">👁</span>
-        </div>
-      </div>
-
-      <button className="mt-4 w-full bg-[#c8ff00] text-black text-[11px] font-bold rounded-xl py-2.5 flex items-center justify-center gap-1 font-[family-name:var(--font-space-grotesk)]">
-        Login →
-      </button>
-
-      <p className="mt-3 text-center text-[#555] text-[9px] font-[family-name:var(--font-inter)]">
-        Don&apos;t have an account?{" "}
-        <span className="text-[#c8ff00] font-semibold">Sign up</span>
-      </p>
-    </div>);
-
-}
-
-function WebsiteTypeScreen() {
-  const types = [
-  "Business Website",
-  "Landing Page",
-  "E-commerce Store",
-  "Web Application",
-  "Custom Dashboard",
-  "SaaS Platform",
-  "Portfolio",
-  "Mobile PWA"];
-
-
-  return (
-    <div className="flex flex-col px-4 pt-2">
-      <div className="flex items-center gap-2 mb-1">
-        <button className="w-6 h-6 rounded-full bg-[#141414] flex items-center justify-center">
-          <span className="text-white text-[9px]">←</span>
-        </button>
-        <div>
-          <p className="text-white text-xs font-bold font-[family-name:var(--font-space-grotesk)]">
-            Start Your Project
-          </p>
-          <p className="text-[#555] text-[8px] font-[family-name:var(--font-inter)]">
-            STEP 1 OF 4
-          </p>
-        </div>
-      </div>
-
-      {/* Progress bar */}
-      <div className="flex gap-1 mb-3">
-        {[1, 0, 0, 0].map((v, i) =>
-        <div key={i} className="flex-1 h-0.5 rounded-full overflow-hidden bg-[#222]">
-            <div
-            className="h-full bg-[#c8ff00] rounded-full"
-            style={{ width: v ? "100%" : "0%" }} />
-
-          </div>
-        )}
-      </div>
-
-      <div className="flex items-center gap-1.5 mb-2">
-        <div className="w-5 h-5 rounded-full bg-[#1a2a0a] border border-[#c8ff00]/30 flex items-center justify-center">
-          <span className="text-[#c8ff00] text-[8px]">🏢</span>
-        </div>
-        <p className="text-white text-xs font-bold font-[family-name:var(--font-space-grotesk)]">
-          Business Info
-        </p>
-      </div>
-
-      <p className="text-[#555] text-[8px] mb-1 font-[family-name:var(--font-inter)]">
-        Website Type Needed
-      </p>
-      <div className="flex flex-wrap gap-1">
-        {types.map((t, i) =>
-        <span
-          key={t}
-          className={`text-[7px] px-2 py-0.5 rounded-full font-[family-name:var(--font-inter)] border ${
-          i === 0 ?
-          "border-[#c8ff00]/50 text-[#c8ff00] bg-[#1a2a0a]" :
-          "border-[#222] text-[#888] bg-transparent"}`
-          }>
-
-            {t}
-          </span>
-        )}
-      </div>
-
-      <button className="mt-3 w-full bg-[#c8ff00] text-black text-[9px] font-bold rounded-xl py-2 font-[family-name:var(--font-space-grotesk)]">
-        Continue →
-      </button>
-    </div>);
-
-}
-
-function DetailsScreen() {
-  return (
-    <div className="flex flex-col px-4 pt-2">
-      <div className="flex items-center gap-2 mb-1">
-        <button className="w-6 h-6 rounded-full bg-[#141414] flex items-center justify-center">
-          <span className="text-white text-[9px]">←</span>
-        </button>
-        <div>
-          <p className="text-white text-xs font-bold font-[family-name:var(--font-space-grotesk)]">
-            Start Your Project
-          </p>
-          <p className="text-[#555] text-[8px] font-[family-name:var(--font-inter)]">
-            STEP 2 OF 4
-          </p>
-        </div>
-      </div>
-
-      {/* Progress bar */}
-      <div className="flex gap-1 mb-3">
-        {[1, 1, 0, 0].map((v, i) =>
-        <div key={i} className="flex-1 h-0.5 rounded-full overflow-hidden bg-[#222]">
-            <div
-            className="h-full bg-[#c8ff00] rounded-full"
-            style={{ width: v ? "100%" : "0%" }} />
-
-          </div>
-        )}
-      </div>
-
-      <div className="flex items-center gap-1.5 mb-3">
-        <div className="w-5 h-5 rounded-full bg-[#1a2a0a] border border-[#c8ff00]/30 flex items-center justify-center">
-          <span className="text-[#c8ff00] text-[8px]">📋</span>
-        </div>
-        <p className="text-white text-xs font-bold font-[family-name:var(--font-space-grotesk)]">
-          Project Details
-        </p>
-      </div>
-
-      <div className="space-y-2">
-        <div>
-          <p className="text-[#555] text-[8px] mb-1 font-[family-name:var(--font-inter)]">
-            Upload Reference Designs
-          </p>
-          <div className="bg-[#141414] border border-dashed border-[#333] rounded-xl h-12 flex flex-col items-center justify-center gap-1">
-            <span className="text-[#555] text-sm">↑</span>
-            <span className="text-[#555] text-[7px]">Tap to upload</span>
-          </div>
-        </div>
-        <div>
-          <p className="text-[#555] text-[8px] mb-1 font-[family-name:var(--font-inter)]">
-            Describe What You Want
-          </p>
-          <div className="bg-[#141414] border border-[#222] rounded-xl h-14 px-2 py-1.5">
-            <p className="text-[#444] text-[7px] font-[family-name:var(--font-inter)]">
-              Describe your ideal website, features, style...
-            </p>
-          </div>
-        </div>
-        <div>
-          <p className="text-[#555] text-[8px] mb-1 font-[family-name:var(--font-inter)]">
-            Deadline Urgency
-          </p>
-          <div className="grid grid-cols-2 gap-1">
-            {["Urgent", "Normal", "Relaxed", "Flexible"].map((d, i) =>
-            <div
-              key={d}
-              className={`text-center rounded-xl py-1 text-[7px] font-[family-name:var(--font-inter)] border ${
-              i === 1 ?
-              "border-[#c8ff00]/50 text-[#c8ff00] bg-[#1a2a0a]" :
-              "border-[#222] text-[#666]"}`
-              }>
-
-                {d}
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      <button className="mt-2 w-full bg-[#c8ff00] text-black text-[9px] font-bold rounded-xl py-2 font-[family-name:var(--font-space-grotesk)]">
-        Continue →
-      </button>
-    </div>);
-
-}
-
-function EstimateScreen() {
-  return (
-    <div className="flex flex-col px-4 pt-2">
-      <div className="flex items-center gap-2 mb-1">
-        <button className="w-6 h-6 rounded-full bg-[#141414] flex items-center justify-center">
-          <span className="text-white text-[9px]">←</span>
-        </button>
-        <div>
-          <p className="text-white text-xs font-bold font-[family-name:var(--font-space-grotesk)]">
-            Start Your Project
-          </p>
-          <p className="text-[#555] text-[8px] font-[family-name:var(--font-inter)]">
-            STEP 3 OF 4
-          </p>
-        </div>
-      </div>
-
-      {/* Progress bar */}
-      <div className="flex gap-1 mb-3">
-        {[1, 1, 1, 0].map((v, i) =>
-        <div key={i} className="flex-1 h-0.5 rounded-full overflow-hidden bg-[#222]">
-            <div
-            className="h-full bg-[#c8ff00] rounded-full"
-            style={{ width: v ? "100%" : "0%" }} />
-
-          </div>
-        )}
-      </div>
-
-      <div className="flex items-center gap-1.5 mb-3">
-        <div className="w-5 h-5 rounded-full bg-[#1a2a0a] border border-[#c8ff00]/30 flex items-center justify-center">
-          <span className="text-[#c8ff00] text-[8px]">$</span>
-        </div>
-        <p className="text-white text-xs font-bold font-[family-name:var(--font-space-grotesk)]">
-          Auto Estimate
-        </p>
-      </div>
-
-      <div className="bg-[#141414] border border-[#222] rounded-2xl p-3 mb-3">
-        <p className="text-[#555] text-[7px] uppercase tracking-widest mb-1 font-[family-name:var(--font-inter)]">
-          Estimated Cost
-        </p>
-        <div className="flex items-baseline gap-1">
-          <span className="text-[#c8ff00] text-2xl font-black font-[family-name:var(--font-space-grotesk)]">
-            ₹15,000
-          </span>
-          <span className="text-[#555] text-[9px] font-[family-name:var(--font-inter)]">
-            — ₹21,000
-          </span>
-        </div>
-
-        <div className="border-t border-[#1a1a1a] mt-2 pt-2">
-          <p className="text-[#555] text-[7px] uppercase tracking-widest mb-1 font-[family-name:var(--font-inter)]">
-            Estimated Delivery
-          </p>
-          <p className="text-white text-xs font-bold font-[family-name:var(--font-space-grotesk)]">
-            2 weeks
-          </p>
-        </div>
-
-        <div className="border-t border-[#1a1a1a] mt-2 pt-2">
-          <p className="text-[#555] text-[7px] uppercase tracking-widest font-[family-name:var(--font-inter)]">
-            Breakdown
-          </p>
-        </div>
-      </div>
-
-      <p className="text-[#444] text-[7px] text-center mb-2 font-[family-name:var(--font-inter)]">
-        * Auto-generated estimate. Final pricing after consultation.
-      </p>
-
-      <button className="w-full bg-[#c8ff00] text-black text-[9px] font-bold rounded-xl py-2 font-[family-name:var(--font-space-grotesk)]">
-        Continue →
-      </button>
     </div>);
 
 }
