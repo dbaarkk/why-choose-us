@@ -134,7 +134,7 @@ export default function AppShowcaseSection() {
                     <img
                         src={screen.image}
                         alt={screen.label}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                     />
                   </PhoneFrame>
                 </div>
@@ -189,7 +189,7 @@ function PhoneFrame({ children }: {children: React.ReactNode;}) {
           backgroundSize: "20px 20px"
         }} />
 
-      <div className="relative h-full pt-10 overflow-hidden">
+      <div className="relative h-full overflow-hidden">
         {children}
       </div>
     </div>);

@@ -1,0 +1,11 @@
+$ next dev --turbopack --port "3004"
+   ▲ Next.js 15.5.9 (Turbopack)
+   - Local:        http://localhost:3004
+   - Network:      http://192.168.0.2:3004
+
+ ✓ Starting...
+ ✓ Ready in 1657ms
+ ○ Compiling / ...
+ ✓ Compiled / in 5.8s
+ GET / 200 in 6839ms
+ GET / 200 in 317ms

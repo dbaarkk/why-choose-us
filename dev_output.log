@@ -1,0 +1,11 @@
+ ⚠ Port 3000 is in use by an unknown process, using available port 3006 instead.
+   ▲ Next.js 15.5.9
+   - Local:        http://localhost:3006
+   - Network:      http://192.168.0.2:3006
+
+ ✓ Starting...
+ ✓ Ready in 1994ms
+ ○ Compiling / ...
+ ✓ Compiled / in 6.8s (605 modules)
+ GET / 200 in 8510ms
+ GET / 200 in 206ms

@@ -122,9 +122,9 @@ export default function SupportingSection() {
             {services.map((service, i) => (
               <div
                 key={service.label}
-                className="group bg-[#0d0d0d] border border-[#1a1a1a] rounded-2xl p-6 transition-all duration-300 cursor-default hover:border-[#c8ff00]/20"
+                className="group bg-[#0d0d0d] border border-[#1a1a1a] rounded-3xl p-8 transition-all duration-300 cursor-default hover:border-[#c8ff00]/20"
               >
-                <span className="font-[family-name:var(--font-space-grotesk)] text-4xl font-black text-[#1a1a1a] block mb-2">
+                <span className="font-[family-name:var(--font-space-grotesk)] text-5xl font-black text-[#1a1a1a] block mb-4">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="text-white text-sm font-bold font-[family-name:var(--font-space-grotesk)] transition-colors group-hover:text-[#c8ff00]">

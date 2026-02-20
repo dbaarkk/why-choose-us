@@ -75,7 +75,7 @@ export default function HeroSection() {
 
           {/* LEFT HAND — slides left on scroll */}
           <div
-          className="absolute inset-y-0 left-0 w-1/2 pointer-events-none select-none flex items-center justify-end pr-20 md:pr-28"
+          className="absolute inset-y-0 left-0 w-[46%] pointer-events-none select-none flex items-center justify-end pr-10 md:pr-16"
           style={{
             transform: `translateX(-${handOffset}%)`,
             opacity: handOpacity,
@@ -84,7 +84,7 @@ export default function HeroSection() {
           }}>
 
             <div
-            className="w-full h-full max-w-[500px]"
+            className="w-full h-full max-w-[400px]"
             style={{
               backgroundImage: `url('https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/ea4c5bf3-e4d3-4927-b10a-3399b21a079d/Screenshot_2026-02-20-12-58-23-64_99c04817c0de5652397fc8b56c3b3817-1771574357893.png?width=8000&height=8000&resize=contain')`,
               backgroundSize: "contain",
@@ -97,7 +97,7 @@ export default function HeroSection() {
 
           {/* RIGHT HAND — slides right on scroll */}
           <div
-          className="absolute inset-y-0 right-0 w-1/2 pointer-events-none select-none flex items-center justify-start pl-20 md:pl-28"
+          className="absolute inset-y-0 right-0 w-[46%] pointer-events-none select-none flex items-center justify-start pl-10 md:pl-16"
           style={{
             transform: `translateX(${handOffset}%)`,
             opacity: handOpacity,
@@ -106,7 +106,7 @@ export default function HeroSection() {
           }}>
 
             <div
-            className="w-full h-full max-w-[500px]"
+            className="w-full h-full max-w-[400px]"
             style={{
               backgroundImage: `url('https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/ea4c5bf3-e4d3-4927-b10a-3399b21a079d/Screenshot_2026-02-20-12-58-54-03_99c04817c0de5652397fc8b56c3b3817-1771574347598.png?width=8000&height=8000&resize=contain')`,
               backgroundSize: "contain",
@@ -172,7 +172,7 @@ export default function HeroSection() {
 function PhoneMockup() {
   return (
     <div
-      className="relative transform scale-[0.60] md:scale-[0.65] lg:scale-[0.75] origin-center transition-transform"
+      className="relative transform scale-[0.65] md:scale-[0.70] lg:scale-[0.80] origin-center transition-transform"
       style={{ width: "210px", height: "440px" }}>
 
       {/* Glow behind phone */}
@@ -204,13 +204,116 @@ function PhoneMockup() {
               </div>
             </div>
 
-          {/* Screen content image */}
-          <img
-            src="/images/hero-phone.jpg"
-            alt="App Screenshot"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          {/* Screen bg grid */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+              backgroundSize: "22px 22px"
+            }} />
 
+
+          {/* Screen content */}
+          <div className="absolute inset-0 flex flex-col pt-10 pb-0">
+            {/* Header */}
+          <div className="flex items-start justify-between px-5 py-3">
+            <div>
+              <p className="font-[family-name:var(--font-inter)] text-[#888] text-[9px] uppercase tracking-[0.2em]">
+                WELCOME BACK
+              </p>
+              <h2 className="font-[family-name:var(--font-space-grotesk)] text-white text-[26px] font-bold leading-tight">
+                Aarya
+              </h2>
+            </div>
+            <div className="w-9 h-9 rounded-full bg-[#c8ff00] flex items-center justify-center mt-1">
+              <span className="text-black font-black text-sm font-[family-name:var(--font-space-grotesk)]">
+                A
+              </span>
+            </div>
+          </div>
+
+          {/* Hero card */}
+          <div className="mx-4 bg-[#111] border border-[#1e1e1e] rounded-2xl p-4 mb-3">
+            <div className="flex items-center gap-1 mb-2.5">
+              <div className="bg-[#182410] border border-[#c8ff00]/25 rounded-full px-2 py-0.5 flex items-center gap-1">
+                <span className="text-[#c8ff00] text-[7px]">✦</span>
+                <span className="text-[#c8ff00] text-[7px] font-bold uppercase tracking-wider">
+                  Premium Web Agency
+                </span>
+              </div>
+            </div>
+            <p className="text-white text-[13px] font-bold leading-snug font-[family-name:var(--font-space-grotesk)]">
+              We build websites{" "}
+              <span className="text-[#c8ff00] italic">that convert</span>
+            </p>
+            <p className="text-[#666] text-[9px] mt-1 leading-relaxed font-[family-name:var(--font-inter)]">
+              Launch your business online in 72 hours. Performance-driven,
+              custom engineered.
+            </p>
+            <button className="mt-3 w-full bg-[#c8ff00] text-black text-[10px] font-black rounded-full py-2 flex items-center justify-center gap-1 font-[family-name:var(--font-space-grotesk)]">
+              🚀 Start Your Project →
+            </button>
+          </div>
+
+          {/* Services label */}
+          <div className="flex items-center justify-between px-5 mb-2">
+            <p className="text-white text-[11px] font-bold font-[family-name:var(--font-space-grotesk)]">
+              Our Services
+            </p>
+            <p className="text-[#555] text-[9px] font-[family-name:var(--font-inter)]">
+              12 types
+            </p>
+          </div>
+
+          {/* Mini service grid */}
+          <div className="grid grid-cols-3 gap-1.5 px-4 flex-1">
+            {[
+              { icon: "🌐", label: "Business Sites" },
+              { icon: "🚀", label: "Landing Pages" },
+              { icon: "🛒", label: "E-commerce" },
+              { icon: "</>", label: "Web Apps" },
+              { icon: "📱", label: "Mobile PWA" },
+              { icon: "📊", label: "Dashboards" }].
+              map((s) =>
+              <div
+                key={s.label}
+                className="bg-[#111] border border-[#1a1a1a] rounded-xl p-2 flex flex-col items-center gap-1">
+
+                <div className="w-5 h-5 rounded-lg bg-[#182410] flex items-center justify-center">
+                  <span className="text-[#c8ff00] text-[9px]">
+                    {s.icon}
+                  </span>
+                </div>
+                <span className="text-[#666] text-[7px] text-center leading-tight font-[family-name:var(--font-inter)]">
+                  {s.label}
+                </span>
+              </div>
+              )}
+          </div>
+
+          {/* Bottom nav */}
+          <div className="border-t border-[#1a1a1a] flex items-center justify-around py-2.5 px-3 mt-2">
+            <div className="flex flex-col items-center gap-0.5">
+              <span className="text-[#c8ff00] text-[10px]">🚀</span>
+              <span className="text-[#c8ff00] text-[6px] font-bold tracking-wide">
+                LAUNCH
+              </span>
+            </div>
+            <div className="flex flex-col items-center gap-0.5">
+              <span className="text-[#555] text-[10px]">📁</span>
+              <span className="text-[#555] text-[6px] tracking-wide">
+                PROJECTS
+              </span>
+            </div>
+            <div className="flex flex-col items-center gap-0.5">
+              <span className="text-[#555] text-[10px]">👤</span>
+              <span className="text-[#555] text-[6px] tracking-wide">
+                PROFILE
+              </span>
+            </div>
+          </div>
+          </div>
         </div>
       </div>
       </div>);
