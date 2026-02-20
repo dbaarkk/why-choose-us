@@ -75,7 +75,7 @@ export default function HeroSection() {
 
           {/* LEFT HAND — slides left on scroll */}
           <div
-          className="absolute inset-y-0 left-0 w-[46%] pointer-events-none select-none flex items-center justify-end pr-2 md:pr-6"
+          className="absolute inset-y-0 left-0 w-[46%] pointer-events-none select-none flex items-center justify-end pr-10 md:pr-16"
           style={{
             transform: `translateX(-${handOffset}%)`,
             opacity: handOpacity,

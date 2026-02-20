@@ -162,15 +162,9 @@ export default function WhyChooseSection() {
             }
             style={{ transitionDelay: `${i * 80}ms` }}>
 
-              {/* Number */}
-              <span className="absolute top-6 right-6 text-[#1a1a1a] text-5xl font-black font-[family-name:var(--font-space-grotesk)] group-hover:text-[#c8ff00]/10 transition-colors duration-300">
+              <span className="font-[family-name:var(--font-space-grotesk)] text-5xl font-black text-[#1a1a1a] block mb-4">
                 {reason.number}
               </span>
-
-              {/* Icon */}
-              <div className="w-12 h-12 bg-[#1a2a0a] border border-[#c8ff00]/20 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:border-[#c8ff00]/50 transition-colors duration-300 !whitespace-pre-line !whitespace-pre-line !whitespace-pre-line !whitespace-pre-line !whitespace-pre-line !whitespace-pre-line">
-                {reason.icon}
-              </div>
 
               {/* Content */}
               <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white mb-3 leading-snug">
